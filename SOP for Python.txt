@@ -1,0 +1,274 @@
+
+4.	Create a project Folder
+5.	Create Kaizen folder inside the project folder
+6.	Open cmd from this kaizen folder
+7.	Create virtual environment using command -    py -3 -m venv virtualenvs
+8.	Install the following using cmd –
+
+python -m pip install xlwt
+python -m pip install django-widget-tweaks
+
+pip install django-static-jquery
+
+pip install django-bootstrap-modal-forms
+
+pip install jquery
+
+pip install TurboGears
+
+pip install django-easy-select2
+pip install django-fontawesome-5
+
+pip install django-select2
+pip install django-redis
+
+pip install django-bootstrap-v5
+pip install fontawesomefree
+
+pip install django-bootstrap-v5
+
+pip install django-jquery
+pip install django-static-jquery 
+
+python.exe -m pip install --upgrade pip
+
+pip install django-easy-select2
+
+pip install django-mathfilters
+
+python -m pip install django
+
+
+python -m pip install xlwt
+pip install xlwt
+
+
+pip install django-bootstrap-v5
+pip install django-fontawesome
+
+pip install django-scheduler
+npm install -g bower
+pip install django-bower
+
+pip install word2number
+pip3 install num2words
+
+pip install django-mathfilters
+
+pip install selenium
+pip install js2py
+
+pip install django-calendarium
+
+pip install mysql-connector-python
+
+
+pip install pandas
+Django-import-export
+pip install Django-import-export
+pip install django-chartjs
+
+pip install bootstrap-table
+
+pip install django-bootstrap-modal-forms
+
+
+pip install django-bootstrap-modal-forms             
+
+
+pip install django-bootstrap-modal-forms 
+pip install bootstrap-py
+
+pip install django-widget-tweaks
+
+pip install django-htmx
+
+
+pip install --upgrade pip
+
+pip install --upgrade --force-reinstall reportlab
+
+pip install reportlab==3.6.11
+
+pip install pillow
+
+pip install xhtml2pdf
+
+pip install django-qr-code
+
+pip install typing-extensions --upgrade
+
+
+pip install python-barcode
+
+pip install pdfkit
+
+
+
+pip install reportlab
+pip uninstall reportlab
+
+pip install -c plotly                
+pip install plotly
+pip install psutil
+pip install requests
+pip uninstall xhtml2pdf
+pip uninstall reportlab
+
+pip install -c plotly
+pip install plotly
+pip install psutil
+pip install requests
+
+
+pip install Weasyprint 
+python -m pip install django
+
+pip install WeasyPrint
+
+pip install pip==21.3.1
+pip install wheel setuptools pip --upgrade
+
+pip install python3-mysqldb
+
+python3.10 -m pip install mysqlclient
+py -m pip install  mysqlclient
+
+pip install mysqlclient
+
+pip install pkg-config
+
+pip install mssql-django
+pip3 install mysqlclient
+pip install pyodbc
+pip3 install djangorestframework
+pip install django-cors-headers
+pip install pymssql
+
+pip install pytz  
+
+
+pip install pyodbc
+
+
+pip install --upgrade pip
+
+pip install pigar
+
+pigar generate
+
+
+9.	Create Project using command – 
+
+python manage.py startapp Kaizen
+django-admin startproject kaizen_project .
+
+10.	Now enter the below 3 commands
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+virtualenvs\scripts\activate
+code .
+
+11.	configuring project settings
+open settings.py from kaizen_project folder in VS code
+
+add the below code in settings.py
+               STATIC_ROOT = BASE_DIR / 'static_collected'
+               MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+               MEDIA_URL = '/media/'
+
+Update At the bottom  ‘kaizen’,  in the INSTALLED_APPS = [….,
+….,
+‘kaizen’, ]
+
+Add the following -
+DATABASES = {
+    'default': {
+        'ENGINE': 'mssql',
+        'NAME':  'kaizenDB',
+        'USER':  'sa',
+        'PASSWORD':  'Dhruthitech@12',
+        'HOST':  SQLServer\SQLEXPRESS',
+        'OPTIONS': {
+            'driver': 'SQL Server Native Client 11.0',
+            'isolation_level': 'READ UNCOMMITTED' #TO PREVENT DEADLOCKS
+        }
+    }
+}
+
+
+
+
+
+12.	In CMD run command : python manage.py collectstatic
+
+13.	database migration
+
+Command in cmd -
+python manage.py inspectdb > kaizen/models1.py
+
+Go to VS Code
+Open models1.py select All and copy
+Open models.py Select All Delete any content and the paste content from models1.py
+
+
+Command in cmd -
+python manage.py makemigrations kaizen
+Command in cmd -
+python manage.py migrate --fake
+
+14.	from kaizen_project folder in VS code, open urls.py file
+select all and delete any content in the urls.py file
+
+Copy the below code and paste in urls.py file
+"""
+URL configuration for masplrandr project.
+
+The `urlpatterns` list routes URLs to views. For more information please see:
+    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+Examples:
+Function views
+    1. Add an import:  from my_app import views
+    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+Class-based views
+    1. Add an import:  from other_app.views import Home
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
+Including another URLconf
+    1. Import the include() function: from django.urls import include, path
+    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
+"""
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path("", include("kaizen.urls")),
+    path('admin/', admin.site.urls),
+    path(r'*', include("kaizen.urls"))
+]
+
+
+
+15.	go to kaizen project folder and create file : urls.py
+sample to copy and change
+
+
+
+from django.urls import path
+from Timesheet import views, viewsmaster, viewstransaction
+
+from django.views.generic.base import RedirectView
+from django.conf import settings
+from django.contrib.staticfiles.storage import staticfiles_storage
+
+
+urlpatterns = [
+    path("", views.home, name="home"),
+    # path("Dashboard/", views.Dashboard, name="Dashboard"),
+
+
+
+    # path("CompanyList/", viewsmaster.CompanyList, name="CompanyList"),
+    # path("CompanyListAdd/", viewsmaster.CompanyListAdd, name="CompanyListAdd"),
+    # path("CompanyListDetails/<int:lID>", viewsmaster.CompanyListDetails, name="CompanyListDetails"),
+
+]
+
